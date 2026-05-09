@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>母亲节快乐 - 送给最亲爱的妈妈</title>
     <style>
         /* ================= 背景部分的 CSS ================= */
@@ -12,7 +13,6 @@
             background: #edc3ff;
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             letter-spacing: 0.1em;
-            /* 移除 display: flex，我们通过绝对定位来控制信封 */
         }
 
         .bg-svg-container {
@@ -20,7 +20,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 0; 
+            z-index: 0;
         }
 
         .bg-svg-container::before {
@@ -33,44 +33,73 @@
         }
 
         /* 背景 SVG 元素专属样式 */
-        .hair { fill: #1f0038; }
-        .hair-main { animation: hair-flow 0.75s infinite alternate ease-in-out; }
+        .hair {
+            fill: #1f0038;
+        }
+        .hair-main {
+            animation: hair-flow 0.75s infinite alternate ease-in-out;
+        }
         @keyframes hair-flow {
-            from { d: path("M600 198c-3.5-5.2-9.3-10.7-15.7-12.2c-18.6-3.2-28.4 17.2-48.8 12.8c-5.7-1.3-9.3-6.2-12.5-11.1c-7.6-11.9-22.1-20.5-35.7-16.9c-9.7 2.6-16.9 10.5-25.8 14.8a37.5 37.5 0 0 1-21.7 3.3c-11.2-4.6.7-29-14.3-39.3c-17-11.4-23.8 10.6-40.3 7s-5.6-14.7-3.2-30.7c2.8-18.8-6.3-31.4-20.6-32.3s-17.8-17.9-17.8-17.9l-2.3-9.7a46.1 46.1 0 0 0-7.2-16.3a36.5 36.5 0 0 0-7.1-7.6a41.5 41.5 0 0 0-24.4-8.4a10 10 0 0 0-4.3.8v260h306"); }
-            to { d: path("M600 198c-3.5 5.2-9.3 10.7-15.7 10.2c-14.6 3.2-25.4-19.6-48.8-18.8c-6.5 1.2-9.3 6.2-12.5 11.1c-7.6 11.9-22.1 5.5-35.7-10.9c-9.7-16.6-16.9-20.5-25.8-12.8a37.5 47.5 0 0 1 -21.7 3.3c-12.2-4.6.7-29-16.3-39.3c-17-11.4-23.8 10.6-38.3 6s-5.6-20.7-1.2-35.7c2.8-18.8-6.3-26.4-18.6-24.3s-20.8-20.9-20.8-22.9l-4.3-9.7a46.1 46.1 0 0 0-17.2-16.3a36.5 36.5 0 0 0-19.1 -3.6a10 10 0 0 0-4.3.8a1 1 0 0 0-1.3.8v260h306"); }
+            from {
+                d: path("M600 198c-3.5-5.2-9.3-10.7-15.7-12.2c-18.6-3.2-28.4 17.2-48.8 12.8c-5.7-1.3-9.3-6.2-12.5-11.1c-7.6-11.9-22.1-20.5-35.7-16.9c-9.7 2.6-16.9 10.5-25.8 14.8a37.5 37.5 0 0 1-21.7 3.3c-11.2-4.6.7-29-14.3-39.3c-17-11.4-23.8 10.6-40.3 7s-5.6-14.7-3.2-30.7c2.8-18.8-6.3-31.4-20.6-32.3s-17.8-17.9-17.8-17.9l-2.3-9.7a46.1 46.1 0 0 0-7.2-16.3a36.5 36.5 0 0 0-7.1-7.6a41.5 41.5 0 0 0-24.4-8.4a10 10 0 0 0-4.3.8v260h306");
+            }
+            to {
+                d: path("M600 198c-3.5 5.2-9.3 10.7-15.7 10.2c-14.6 3.2-25.4-19.6-48.8-18.8c-6.5 1.2-9.3 6.2-12.5 11.1c-7.6 11.9-22.1 5.5-35.7-10.9c-9.7-16.6-16.9-20.5-25.8-12.8a37.5 47.5 0 0 1 -21.7 3.3c-12.2-4.6.7-29-16.3-39.3c-17-11.4-23.8 10.6-38.3 6s-5.6-20.7-1.2-35.7c2.8-18.8-6.3-26.4-18.6-24.3s-20.8-20.9-20.8-22.9l-4.3-9.7a46.1 46.1 0 0 0-17.2-16.3a36.5 36.5 0 0 0-19.1 -3.6a10 10 0 0 0-4.3.8a1 1 0 0 0-1.3.8v260h306");
+            }
         }
-        .leaf-2 { fill: #6fd489; }
-        .leaf-1 { fill: #9ae3ce; }
-        .leaf-4 { fill: #499e00; }
-        .leaf-3 { fill: #5ec16e; }
-        .text { fill: #f2f3f7; font-size: 10px; }
-        .face { fill: #f68fb6; }
-        .heart { fill: #ff4646; animation: myheart 1s infinite alternate; }
+        .leaf-2 {
+            fill: #6fd489;
+        }
+        .leaf-1 {
+            fill: #9ae3ce;
+        }
+        .leaf-4 {
+            fill: #499e00;
+        }
+        .leaf-3 {
+            fill: #5ec16e;
+        }
+        .text {
+            fill: #f2f3f7;
+            font-size: 10px;
+        }
+        .face {
+            fill: #f68fb6;
+        }
+        .heart {
+            fill: #ff4646;
+            animation: myheart 1s infinite alternate;
+        }
         @keyframes myheart {
-            from { transform: translate(0, 0); }
-            to { transform: translate(0, -15px); }
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(0, -15px);
+            }
         }
-        .flower-1 { fill: #8d0f69; }
-        .flower-2 { fill: #d15aad; }
+        .flower-1 {
+            fill: #8d0f69;
+        }
+        .flower-2 {
+            fill: #d15aad;
+        }
 
 
         /* ================= 信封部分的 CSS (动态定位版) ================= */
         .envelope-wrapper {
             position: absolute;
-            /* 初始位置：贴紧右下角 */
             bottom: 30px;
             right: 30px;
             width: 500px;
             height: 320px;
-            /* 初始缩放比例：缩小为 35%，不遮挡主背景 */
             transform: scale(0.35);
             transform-origin: bottom right;
             cursor: pointer;
             z-index: 10;
-            /* 1. 信封飞跃动画：控制位置和缩放的过渡 */
-            transition: bottom 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                        right 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                        transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: bottom 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+                right 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+                transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .envelope {
@@ -78,30 +107,51 @@
             width: 100%;
             height: 100%;
             background: #ff8fa3;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             border-radius: 6px;
         }
 
         /* 左右封舌 */
         .envelope::before {
-            content: ""; position: absolute; top: 0; left: 0;
-            border-top: 160px solid transparent; border-bottom: 160px solid transparent; border-left: 250px solid #ff6b81; z-index: 3;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-top: 160px solid transparent;
+            border-bottom: 160px solid transparent;
+            border-left: 250px solid #ff6b81;
+            z-index: 3;
         }
         .envelope::after {
-            content: ""; position: absolute; top: 0; right: 0;
-            border-top: 160px solid transparent; border-bottom: 160px solid transparent; border-right: 250px solid #ff6b81; z-index: 3;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-top: 160px solid transparent;
+            border-bottom: 160px solid transparent;
+            border-right: 250px solid #ff6b81;
+            z-index: 3;
         }
 
         /* 底部封舌 */
         .bottom-flap {
-            position: absolute; bottom: 0; left: 0;
-            border-left: 250px solid transparent; border-right: 250px solid transparent; border-bottom: 180px solid #ff4757; z-index: 4;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-left: 250px solid transparent;
+            border-right: 250px solid transparent;
+            border-bottom: 180px solid #ff4757;
+            z-index: 4;
         }
 
         /* 顶部封盖 */
         .top-flap {
-            position: absolute; top: 0; left: 0;
-            border-left: 250px solid transparent; border-right: 250px solid transparent; border-top: 180px solid #ff4757;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 250px solid transparent;
+            border-right: 250px solid transparent;
+            border-top: 180px solid #ff4757;
             transform-origin: top;
             transition: transform 0.4s, z-index 0s 0.4s;
             z-index: 5;
@@ -109,8 +159,14 @@
 
         /* 封口爱心火漆印 */
         .seal {
-            position: absolute; top: 145px; left: 50%; transform: translateX(-50%); font-size: 50px;
-            z-index: 6; transition: opacity 0.4s; filter: drop-shadow(0 4px 4px rgba(0,0,0,0.2));
+            position: absolute;
+            top: 145px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            z-index: 6;
+            transition: opacity 0.4s;
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
         }
 
         /* 内部大信纸 */
@@ -123,7 +179,7 @@
             background: #fff;
             border-radius: 10px;
             z-index: 2;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             box-sizing: border-box;
             display: flex;
@@ -133,82 +189,371 @@
         }
 
         .letter-content {
-            padding: 30px; width: 100%; box-sizing: border-box; text-align: center;
+            padding: 30px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
         }
 
         .letter img {
-            width: 100%; height: 240px; object-fit: cover;
-            border-radius: 8px; margin-bottom: 20px; border: 4px solid #fff5f7; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 4px solid #fff5f7;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .letter h3 { margin: 0 0 15px 0; color: #d6336c; font-size: 24px; }
-        .letter p { font-size: 16px; color: #555; line-height: 2; margin: 0; text-align: left; white-space: pre-line; }
+        .letter h3 {
+            margin: 0 0 15px 0;
+            color: #d6336c;
+            font-size: 26px;
+            line-height: 1.4;
+        }
+        .letter p {
+            font-size: 17px;
+            color: #555;
+            line-height: 2;
+            margin: 0;
+            text-align: left;
+            white-space: pre-line;
+        }
 
-        .letter::-webkit-scrollbar { width: 8px; }
-        .letter::-webkit-scrollbar-thumb { background-color: #ffb6c1; border-radius: 4px; }
+        .letter::-webkit-scrollbar {
+            width: 8px;
+        }
+        .letter::-webkit-scrollbar-thumb {
+            background-color: #ffb6c1;
+            border-radius: 4px;
+        }
 
-        /* 点击提示词 - 加大字号以对抗父容器的缩放 */
+        /* 点击提示词 */
         .hint {
             position: absolute;
             bottom: -90px;
             width: 100%;
             text-align: center;
             color: #fff;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
             font-weight: bold;
-            font-size: 45px; /* 在 scale(0.35) 下，视觉大小约等于 16px */
+            font-size: 45px;
             letter-spacing: 4px;
             animation: bounce 2s infinite;
             transition: opacity 0.4s;
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-15px);}
-            60% {transform: translateY(-7px);}
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
         }
 
         /* ===== 激活展开状态的序列化动画 ===== */
-
-        /* 1. 整体容器飞至中间并下沉 */
         .envelope-wrapper.open {
-            bottom: -50px; /* 整体大幅下沉，确保信纸不冲出顶部 */
+            bottom: -50px;
             right: 50%;
-            /* 向右偏移自身一半达到居中，放大回 85% */
-            transform: translateX(50%) scale(0.85);
+            transform: translateX(50%) scale(0.88);
             transform-origin: bottom center;
             cursor: default;
         }
 
-        /* 隐藏提示语 */
         .envelope-wrapper.open .hint {
             opacity: 0;
             visibility: hidden;
         }
 
-        /* 2. 延迟 0.6s 后（等飞到中间后），盖子翻开 */
         .envelope-wrapper.open .top-flap {
             transform: rotateX(180deg);
             z-index: 1;
             transition: transform 0.6s 0.6s, z-index 0s 0.9s;
         }
-        
+
         .envelope-wrapper.open .seal {
             opacity: 0;
             transition: opacity 0.4s 0.6s;
         }
 
-        /* 3. 延迟 1.2s 后（等盖子翻开后），信纸抽出 */
         .envelope-wrapper.open .letter {
-            height: 75vh; /* 占视口高度的 75%，自适应屏幕 */
-            max-height: 650px; 
-            transform: translateY(-160px); /* 向上只抽出这么多，配合外部下沉，确保照片不被顶掉 */
+            height: 75vh;
+            max-height: 650px;
+            transform: translateY(-160px);
             z-index: 10;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             overflow-y: auto;
             transition: transform 0.8s 1.2s, height 0.8s 1.2s, z-index 0s 1.2s;
         }
 
+
+        /* ==================== 移动端适配 ==================== */
+        @media screen and (max-width: 768px) {
+            .envelope-wrapper {
+                width: 420px;
+                height: 270px;
+                bottom: 20px;
+                right: 15px;
+                transform: scale(0.38);
+                transform-origin: bottom right;
+            }
+
+            .envelope::before {
+                border-top: 135px solid transparent;
+                border-bottom: 135px solid transparent;
+                border-left: 210px solid #ff6b81;
+            }
+            .envelope::after {
+                border-top: 135px solid transparent;
+                border-bottom: 135px solid transparent;
+                border-right: 210px solid #ff6b81;
+            }
+            .bottom-flap {
+                border-left: 210px solid transparent;
+                border-right: 210px solid transparent;
+                border-bottom: 152px solid #ff4757;
+            }
+            .top-flap {
+                border-left: 210px solid transparent;
+                border-right: 210px solid transparent;
+                border-top: 152px solid #ff4757;
+            }
+            .seal {
+                top: 120px;
+                font-size: 42px;
+            }
+            .letter {
+                left: 15px;
+                width: 390px;
+                height: 245px;
+                bottom: 12px;
+            }
+            .letter-content {
+                padding: 22px;
+            }
+            .letter img {
+                height: 180px;
+                margin-bottom: 14px;
+                border-width: 3px;
+            }
+            .letter h3 {
+                font-size: 24px;
+                margin: 0 0 12px 0;
+            }
+            .letter p {
+                font-size: 16px;
+                line-height: 1.9;
+            }
+            .hint {
+                bottom: -75px;
+                font-size: 36px;
+                letter-spacing: 3px;
+            }
+
+            /* 打开状态 - 768px以下 */
+            .envelope-wrapper.open {
+                bottom: -40px;
+                right: 50%;
+                transform: translateX(50%) scale(0.94);
+                transform-origin: bottom center;
+            }
+            .envelope-wrapper.open .letter {
+                height: 78vh;
+                max-height: 580px;
+                transform: translateY(-140px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .envelope-wrapper {
+                width: 340px;
+                height: 218px;
+                bottom: 15px;
+                right: 8px;
+                transform: scale(0.42);
+                transform-origin: bottom right;
+            }
+
+            .envelope::before {
+                border-top: 109px solid transparent;
+                border-bottom: 109px solid transparent;
+                border-left: 170px solid #ff6b81;
+            }
+            .envelope::after {
+                border-top: 109px solid transparent;
+                border-bottom: 109px solid transparent;
+                border-right: 170px solid #ff6b81;
+            }
+            .bottom-flap {
+                border-left: 170px solid transparent;
+                border-right: 170px solid transparent;
+                border-bottom: 123px solid #ff4757;
+            }
+            .top-flap {
+                border-left: 170px solid transparent;
+                border-right: 170px solid transparent;
+                border-top: 123px solid #ff4757;
+            }
+            .seal {
+                top: 95px;
+                font-size: 34px;
+            }
+            .letter {
+                left: 10px;
+                width: 320px;
+                height: 200px;
+                bottom: 8px;
+                border-radius: 8px;
+            }
+            .letter-content {
+                padding: 16px;
+            }
+            .letter img {
+                height: 140px;
+                margin-bottom: 10px;
+                border-width: 2px;
+                border-radius: 6px;
+            }
+            .letter h3 {
+                font-size: 20px;
+                margin: 0 0 10px 0;
+            }
+            .letter p {
+                font-size: 15px;
+                line-height: 1.85;
+            }
+            .hint {
+                bottom: -60px;
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+
+            /* 打开状态 - 小手机 */
+            .envelope-wrapper.open {
+                bottom: -35px;
+                right: 50%;
+                transform: translateX(50%) scale(0.97);
+                transform-origin: bottom center;
+            }
+            .envelope-wrapper.open .letter {
+                height: 80vh;
+                max-height: 520px;
+                transform: translateY(-125px);
+                border-radius: 8px;
+            }
+            .envelope-wrapper.open .letter h3 {
+                font-size: 22px;
+                margin: 0 0 12px 0;
+            }
+            .envelope-wrapper.open .letter p {
+                font-size: 16px;
+                line-height: 1.9;
+            }
+            .envelope-wrapper.open .letter img {
+                height: 150px;
+                margin-bottom: 12px;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .envelope-wrapper {
+                width: 290px;
+                height: 186px;
+                bottom: 10px;
+                right: 5px;
+                transform: scale(0.45);
+                transform-origin: bottom right;
+            }
+
+            .envelope::before {
+                border-top: 93px solid transparent;
+                border-bottom: 93px solid transparent;
+                border-left: 145px solid #ff6b81;
+            }
+            .envelope::after {
+                border-top: 93px solid transparent;
+                border-bottom: 93px solid transparent;
+                border-right: 145px solid #ff6b81;
+            }
+            .bottom-flap {
+                border-left: 145px solid transparent;
+                border-right: 145px solid transparent;
+                border-bottom: 105px solid #ff4757;
+            }
+            .top-flap {
+                border-left: 145px solid transparent;
+                border-right: 145px solid transparent;
+                border-top: 105px solid #ff4757;
+            }
+            .seal {
+                top: 78px;
+                font-size: 28px;
+            }
+            .letter {
+                left: 8px;
+                width: 274px;
+                height: 172px;
+                bottom: 6px;
+            }
+            .letter-content {
+                padding: 12px;
+            }
+            .letter img {
+                height: 115px;
+                margin-bottom: 8px;
+                border-width: 2px;
+            }
+            .letter h3 {
+                font-size: 17px;
+                margin: 0 0 8px 0;
+            }
+            .letter p {
+                font-size: 13px;
+                line-height: 1.75;
+            }
+            .hint {
+                bottom: -50px;
+                font-size: 22px;
+                letter-spacing: 2px;
+            }
+
+            /* 打开状态 - 最小屏 */
+            .envelope-wrapper.open {
+                bottom: -30px;
+                right: 50%;
+                transform: translateX(50%) scale(0.99);
+                transform-origin: bottom center;
+            }
+            .envelope-wrapper.open .letter {
+                height: 82vh;
+                max-height: 450px;
+                transform: translateY(-115px);
+                border-radius: 8px;
+            }
+            .envelope-wrapper.open .letter-content {
+                padding: 14px;
+            }
+            .envelope-wrapper.open .letter h3 {
+                font-size: 20px;
+                margin: 0 0 10px 0;
+            }
+            .envelope-wrapper.open .letter p {
+                font-size: 15px;
+                line-height: 1.85;
+            }
+            .envelope-wrapper.open .letter img {
+                height: 130px;
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -307,25 +652,27 @@
             <div class="bottom-flap"></div>
             <div class="top-flap"></div>
             <div class="seal">💖</div>
-            
+
             <div class="letter">
                 <div class="letter-content">
                     <img src="mama.jpg" alt="妈妈的照片">
                     <h3>妈妈，母亲节快乐！</h3>
                     <p>
-                        在这个特别的日子里，想对您说声辛苦了。
-                        谢谢您的爱与陪伴。
-                        
-                        从小到大，您总是把最好的留给我，
-                        您的双手操劳出了岁月的痕迹，
-                        您的白发也是为我而生。
-                        
-                        我长大了，以后换我来照顾您。
-                        我希望能带您去更多的地方看看，
-                        希望能做您坚强的后盾。
-                        
-                        愿您永远健康，永远年轻漂亮！
-                        爱您的孩子。
+                        吾母李瑶，展信安康
+                        随信寄长寿花一缶
+                        我一切无恙，身健心宁
+                        夜深入梦，
+                        正饭足你怀中，
+                        似与你谈笑风生
+                        山河万里，心中念汝
+                        便不觉遥远
+                        路遥心迩，世间母女多端严
+                        但少许人如吾两人亦亲亦友
+                        家中并无繁事，
+                        汝心切勿操劳，
+                        慢慢养花，好好爱己
+                        花发即儿归
+                        爱女至上2026.5.10
                     </p>
                 </div>
             </div>
